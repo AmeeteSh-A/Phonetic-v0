@@ -39,7 +39,8 @@ The output is a rewritten script the user can read fluently, right now.
 
 The pipeline is a two-layer system. A **symbolic layer** handles the deterministic logic (onset extraction, pattern matching, filtering), while an **ML layer** handles the ambiguous, context-sensitive decisions (which synonym actually sounds natural in a sentence).
 
-mermaid```
+
+```mermaid
 sequenceDiagram
     participant User
     participant PangramAssessor
