@@ -39,7 +39,7 @@ The output is a rewritten script the user can read fluently, right now.
 
 The pipeline is a two-layer system. A **symbolic layer** handles the deterministic logic (onset extraction, pattern matching, filtering), while an **ML layer** handles the ambiguous, context-sensitive decisions (which synonym actually sounds natural in a sentence).
 
-~~~
+```
 sequenceDiagram
     participant User
     participant PangramAssessor
@@ -55,7 +55,7 @@ sequenceDiagram
     SynonymEngine-->>BlockProfiler: Returns WordNet synonyms filtered by trigger list
     BlockProfiler->>ContextScorer: Scores each candidate against sentence template
     ContextScorer-->>User: Returns contextually best replacement
-~~~
+```
 
 The `ContextScorer` is trained on 5,000 real sentences from the Brown Corpus (real English) versus 5,000 randomly shuffled word-salad sentences (unnatural English). This gives it a statistical sense of grammatical naturalness, which it uses to rank candidate synonyms.
 
